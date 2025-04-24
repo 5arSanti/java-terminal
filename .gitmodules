@@ -1,0 +1,8 @@
+[submodule "terminal-back"]
+	path = terminal-back
+	url = https://github.com/5arSanti/terminal-back.git
+	branch = main
+[submodule "FrontP2II"]
+	path = FrontP2II
+	url = https://github.com/Ochoa-David/FrontP2II.git
+	branch = main
