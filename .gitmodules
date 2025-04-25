@@ -2,7 +2,13 @@
 	path = terminal-back
 	url = https://github.com/5arSanti/terminal-back.git
 	branch = main
+
 [submodule "FrontP2II"]
 	path = FrontP2II
 	url = https://github.com/Ochoa-David/FrontP2II.git
-	branch = main
+	branch = Dev
+
+[submodule "Terminal_de_transporte"]
+	path = Terminal_de_transporte
+	url = https://github.com/Mike03022006/Terminal_de_transporte.git
+	branch = Datos
