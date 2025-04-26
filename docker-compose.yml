@@ -4,11 +4,15 @@ services:
     build:
       context: ./terminal-back
       dockerfile: Dockerfile
+    volumes:
+      - ./terminal-back:/app
+      - /app/node_modules
     ports:
       - "8080:8080"
     depends_on:
       - db
     environment:
+      - PORT=8080
       - DB_HOST=db
       - DB_PORT=3306
       - DB_NAME=terminal
@@ -24,6 +28,7 @@ services:
     environment:
       - DISPLAY=${DISPLAY}
     volumes:
+      - ./FrontP2II/FrontFX:/app
       - /tmp/.X11-unix:/tmp/.X11-unix
   db:
     image: mysql:8.0
@@ -39,3 +44,5 @@ services:
 
 volumes:
   db_data:
+  backend:
+  frontend:
