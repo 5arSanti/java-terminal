@@ -1,0 +1,41 @@
+services:
+  backend:
+    command: npm run start:dev
+    build:
+      context: ./terminal-back
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+    environment:
+      - DB_HOST=db
+      - DB_PORT=3306
+      - DB_NAME=terminal
+      - DB_USER=root
+      - DB_PASSWORD=root
+
+  frontend:
+    build:
+      context: ./FrontP2II/FrontFX
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      - DISPLAY=${DISPLAY}
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix
+  db:
+    image: mysql:8.0
+    container_name: mysql-db
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: terminal
+    volumes:
+      - db_data:/var/lib/mysql
+      - ./Terminal_de_transporte/bd:/docker-entrypoint-initdb.d
+
+volumes:
+  db_data:
