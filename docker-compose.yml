@@ -18,6 +18,8 @@ services:
       - DB_NAME=terminal
       - DB_USER=root
       - DB_PASSWORD=root
+      - JWT_SECRET=auth_secret_token_1$_WPD
+      - SECRET=auth_secret_token_1$_WPD_S_IO
 
   frontend:
     build:
