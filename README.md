@@ -34,3 +34,11 @@ Una vez que los submódulos estén actualizados, ejecuta:
 sudo docker compose up --build
 ```
 > Este comando construye las imágenes Docker necesarias (forzando la reconstrucción para capturar los cambios recientes) y levanta los servicios definidos en el archivo `docker-compose.yml`.
+
+
+Para ejecutar el contenedor construido se puede ejecutar
+
+```bash
+sudo docker compose up
+```
+> Este comando pone en marcha el proyecto sin realizar una construccion`.
